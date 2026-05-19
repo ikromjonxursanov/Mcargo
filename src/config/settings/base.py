@@ -1,3 +1,6 @@
+
+
+from decouple import config
 from distutils.command.config import config
 
 ALLOWED_HOSTS = []
