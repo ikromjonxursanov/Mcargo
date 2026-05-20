@@ -22,7 +22,7 @@ class User(AbstractUser):
         return f"{self.role} - {self.username}"
 
 class Driver(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='driver')
 
     full_name = models.CharField(max_length=100)
     phone_number = models.CharField(max_length=13, null=False, blank=False, validators=[phone_validator])
@@ -36,7 +36,7 @@ class Driver(models.Model):
         return self.full_name
 
 class Manager(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='manager')
 
     full_name = models.CharField(max_length=100)
     phone_number = models.CharField(max_length=13, null=False, blank=False, validators=[phone_validator])
@@ -47,11 +47,11 @@ class Manager(models.Model):
         return self.full_name
 
 class Payment(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='payments')
 
     summa = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True, default=0)
-    is_initial_borrow = models.BooleanField(default=False, null=True, blank=True)
-    is_later_borrow = models.BooleanField(default=False, null=True, blank=True)
+    is_initial_borrow = models.BooleanField(default=False)
+    is_later_borrow = models.BooleanField(default=False)
     note = models.CharField(max_length=200)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
