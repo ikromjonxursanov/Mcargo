@@ -11,8 +11,8 @@ class User(AbstractUser):
         ('manager', 'Manager'),
         ('consignor', 'Consignor'),
     ]
-    role = models.CharField(max_length=20, choices=ROLE_CHOICES)
-    phone_number = models.CharField(max_length=9, validators=[phone_validator])
+    role = models.CharField(max_length=20, choices=ROLE_CHOICES, default='Driver')
+    phone_number = models.CharField(max_length=9, null=False, blank=True, validators=[phone_validator])
 
     def __str__(self):
         return self.role
@@ -21,13 +21,12 @@ class Driver(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
     full_name = models.CharField(max_length=100)
-    phone_number = models.CharField(max_length=9, unique=True, validators=[phone_validator])
+    phone_number = models.CharField(max_length=9, blank=False, null=False, validators=[phone_validator])
     score = models.FloatField(default=0)
     cenceled_offer = models.BooleanField(default=False)
     learned = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+
 
     def __str__(self):
         return self.full_name
@@ -36,7 +35,7 @@ class Manager(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
     full_name = models.CharField(max_length=100)
-    phone_number = models.CharField(max_length=9, unique=True, validators=[phone_validator])
+    phone_number = models.CharField(max_length=13, null=False, blank=False, validators=[phone_validator])
     code = models.CharField(max_length=100)
     is_active = models.BooleanField(default=True)
 
