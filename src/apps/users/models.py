@@ -21,7 +21,7 @@ class Driver(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
     full_name = models.CharField(max_length=100)
-    phone_number = models.CharField(max_length=9, blank=False, null=False, validators=[phone_validator])
+    phone_number = models.CharField(max_length=13, blank=False, null=False, validators=[phone_validator])
     score = models.FloatField(default=0)
     cenceled_offer = models.BooleanField(default=False)
     learned = models.BooleanField(default=False)
