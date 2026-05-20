@@ -12,7 +12,7 @@ class User(AbstractUser):
         ('consignor', 'Consignor'),
     ]
     role = models.CharField(max_length=20, choices=ROLE_CHOICES, default='Driver')
-    phone_number = models.CharField(max_length=9, null=False, blank=True, validators=[phone_validator])
+    phone_number = models.CharField(max_length=13, null=False, blank=True, validators=[phone_validator])
 
     def __str__(self):
         return self.role
