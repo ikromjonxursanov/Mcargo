@@ -15,7 +15,7 @@ class User(AbstractUser):
     phone_number = models.CharField(max_length=13, null=False, blank=False, validators=[phone_validator])
 
     def __str__(self):
-        return self.role
+        return f"{self.role} - {self.username}"
 
 class Driver(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
