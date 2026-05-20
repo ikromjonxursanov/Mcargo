@@ -7,4 +7,3 @@ class User(AbstractUser):
         ('manager', 'manager'),
         ('consignor', 'consignor'),
     ]
-    
