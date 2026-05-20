@@ -3,7 +3,7 @@ from django.contrib.auth.models import AbstractUser
 from django.core.validators import RegexValidator
 
 phone_validator = RegexValidator(regex=r'^\+9989\d{9}$',
-                             massage='telefon number soralgan fromatda bolsihi kerka ')
+                             message='telefon number soralgan fromatda bolsihi kerka ')
 
 class User(AbstractUser):
     ROLE_CHOICES= [
