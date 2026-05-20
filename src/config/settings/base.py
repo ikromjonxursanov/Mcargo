@@ -1,7 +1,6 @@
 
 
 from decouple import config
-from distutils.command.config import config
 
 ALLOWED_HOSTS = []
 
@@ -13,6 +12,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    #local
+    'apps.users',
+
 ]
 
 MIDDLEWARE = [
