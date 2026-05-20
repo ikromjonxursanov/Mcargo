@@ -35,6 +35,7 @@ class Manager(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 
     full_name = models.CharField(max_length=100)
+    phone_number = models.CharField(max_length=13, null=False, blank=False, validators=[phone_validator])
     code = models.CharField(max_length=100)
     is_active = models.BooleanField(default=True)
 
