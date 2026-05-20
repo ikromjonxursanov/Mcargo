@@ -50,8 +50,8 @@ class Payment(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     summa = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True, default=0)
-    initial_borrow = models.BooleanField(default=0, null=True, blank=True)
-    leter_on_borrow = models.BooleanField(default=0, null=True, blank=True)
+    is_initial_borrow = models.BooleanField(default=False, null=True, blank=True)
+    is_later_borrow = models.BooleanField(default=False, null=True, blank=True)
     note = models.CharField(max_length=200)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
