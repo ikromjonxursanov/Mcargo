@@ -46,10 +46,9 @@ class Manager(models.Model):
     def __str__(self):
         return self.full_name
 
-class Paymnet(models.Model):
+class Payment(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
-    full_name = models.CharField(max_length=100)
     summa = models.DecimalField(max_digits=10, decimal_places=2, null=True, blank=True, default=0)
     initial_borrow = models.BooleanField(default=0, null=True, blank=True)
     leter_on_borrow = models.BooleanField(default=0, null=True, blank=True)
