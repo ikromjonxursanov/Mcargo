@@ -13,6 +13,10 @@ class User(AbstractUser):
     ]
     role = models.CharField(max_length=20, choices=ROLE_CHOICES, default='driver')
     phone_number = models.CharField(max_length=13, null=False, blank=False, validators=[phone_validator])
+    score = models.FloatField(default=0)
+    cenceled_offer = models.BooleanField(default=False)
+    learned = models.BooleanField(default=False)
+    is_active = models.BooleanField(default=True)
 
     def __str__(self):
         return f"{self.role} - {self.username}"
