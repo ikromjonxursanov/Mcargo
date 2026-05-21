@@ -10,8 +10,8 @@ class Ad(models.Model):
                        ("unapplied", "Unapplied")
                       ]
 
-    from_country = models.CountryField()
-    to_country = models.CountryField()
+    from_country = CountryField()
+    to_country = CountryField()
 
     role = models.CharField(max_length=100, choices=STATUS_CHOICES, default="ad")
     load = models.CharField(max_length=100, null=True, blank=True, default=0)
