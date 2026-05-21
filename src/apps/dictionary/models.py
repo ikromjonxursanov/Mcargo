@@ -27,4 +27,4 @@ class Reference(models.Model):
 
     code = models.CharField(max_length=120, null=True, blank=True)
     symbol = models.CharField(max_length=120, null=True, blank=True)
-    is_active = models.BooleanField(max_length=20, choices=STATUS_CHOICES, default="active")
+    is_active = models.CharField(max_length=20, choices=STATUS_CHOICES, default="Active")
