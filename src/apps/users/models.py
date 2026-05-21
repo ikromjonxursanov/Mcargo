@@ -59,3 +59,19 @@ class Payment(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
 
+class Trucks(models.Model):
+    ROLE_CHOICES = [("no", "NO"),
+                    ("yes", "Yes"),
+                    ]
+
+    uzbek = models.CharField(max_length=200, null=False, blank=False,)
+    russian = models.CharField(max_length=200, null=False, blank=False,)
+    krilcha = models.CharField(max_length=200, null=False, blank=False,)
+    kod = models.CharField(max_length=200, null=False, blank=False,)
+    status = models.BooleanField(default=False)
+    volume = models.FloatField(default=0)
+    volume_inputi = models.FloatField(max_length=20, null=True, blank=True, choices=ROLE_CHOICES, default="yo'/q")
+    board_type_inputi= models.FloatField(max_length=20, null=True, blank=True, choices=ROLE_CHOICES, default="yo'/q")
+    temperature_inputi= models.FloatField(max_length=20, null=True, blank=True, choices=ROLE_CHOICES, default="yo'/q")
+
+    created_at = models.DateTimeField(auto_now_add=True)
