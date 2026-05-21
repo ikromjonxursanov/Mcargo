@@ -5,7 +5,7 @@ from .users.models import Driver
 class Ad(models.Model):
 
     STATUS_CHOICES = [("ad", "Ad"),
-                      ("inporcess", "Inporcess"),
+                      ("inprocess", "Inprocess"),
                       ("delivered", "Delivered"),
                        ("unapplied", "Unapplied")
                       ]
