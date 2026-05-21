@@ -19,7 +19,8 @@ INSTALLED_APPS = [
     #local
     'apps.users',
     'apps.loads',
-]
+    'apps.settings'
+],
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
