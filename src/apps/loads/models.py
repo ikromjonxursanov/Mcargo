@@ -62,8 +62,8 @@ class Driverlocation(models.Model):
 
     driver = models.OneToOneField(Driver, on_delete=models.CASCADE, related_name="driverlocation")
 
-    lontitude = models.DecimalField(default=0, max_digits=10, decimal_places=2)
-    lattitude = models.DecimalField(default=0, max_digits=10, decimal_places=2)
+    longititude = models.DecimalField(default=0, max_digits=10, decimal_places=2)
+    latitude = models.DecimalField(default=0, max_digits=10, decimal_places=2)
 
     note = models.TextField(max_length=1000, null=True, Blank=True, default="")
     created_at = models.DateTimeField(auto_now_add=True)
