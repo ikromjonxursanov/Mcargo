@@ -8,7 +8,7 @@ class Ad(models.Model):
                       ("delivered", "Delivered")
                       ]
 
-    is_from = models.CountrField()
+    is_from = models.CountryField()
     is_to = models.CountryField()
 
     role = models.CharField(max_length=100, choices=STATUS_CHOICES, default="ad")
