@@ -13,7 +13,7 @@ class Ad(models.Model):
     from_country = CountryField()
     to_country = CountryField()
 
-    role = models.CharField(max_length=100, choices=STATUS_CHOICES, default="ad")
+    status = models.CharField(max_length=100, choices=STATUS_CHOICES, default="ad")
     load = models.CharField(max_length=100, null=True, blank=True, default=0)
     price = models.DecimalField(default=0, max_digits=10, decimal_places=2)
     created = models.DateTimeField(auto_now_add=True)
