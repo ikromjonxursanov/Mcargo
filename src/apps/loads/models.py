@@ -21,7 +21,7 @@ class Ad(models.Model):
     offer_price = models.DecimalField(default=0, max_digits=10, decimal_places=2)
 
     def __str__(self):
-        return f"{self.is_from}-{self.is_to}"
+        return f"{self.from_country}-{self.to_country}"
 
 class Driverlocation(models.Model):
     STATUS_CHOICES = [("all", "All"),
