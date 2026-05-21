@@ -73,5 +73,4 @@ class Trucks(models.Model):
     volume_inputi = models.FloatField(max_length=20, null=True, blank=True, choices=ROLE_CHOICES, default="yo'/q")
     board_type_inputi= models.FloatField(max_length=20, null=True, blank=True, choices=ROLE_CHOICES, default="yo'/q")
     temperature_inputi= models.FloatField(max_length=20, null=True, blank=True, choices=ROLE_CHOICES, default="yo'/q")
-
     created_at = models.DateTimeField(auto_now_add=True)
