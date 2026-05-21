@@ -22,8 +22,8 @@ INSTALLED_APPS = [
     #local
     'apps.users',
     'apps.loads',
-    'apps.settings'
-],
+    'apps.settings',
+]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -113,3 +113,4 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = "users.User"
+GDAL_LIBRARY_PATH = "/opt/homebrew/lib/libgdal.dylib"
