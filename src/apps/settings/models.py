@@ -6,6 +6,10 @@ class Places(models.Model):
     region = models.ForeignKey(Region, on_delete=models.PROTECT)
     city = models.ForeignKey(City, on_delete=models.PROTECT)
 
-# class Application(models.Model):
-#     full_name = models.CharField(max_length=100, null=False, blank=False)
-#     
+class Application(models.Model):
+    full_name = models.CharField(max_length=100, null=False, blank=False)
+    phone_number = models.CharField(max_length=20, null=False, blank=False)
+    type = models.CharField(max_length=20, null=False, blank=False)
+    status = models.CharField(max_length=20, null=False, blank=False)
+    created = models.DateTimeField(auto_now_add=True)
+    
