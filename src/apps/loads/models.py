@@ -1,5 +1,5 @@
 from django.db import models
-from django_countries.fields import CountrField
+from django_countries.fields import CountryField
 
 class Ad(models.Model):
 
