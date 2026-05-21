@@ -1,5 +1,6 @@
 from django.db import models
 from django_countries.fields import CountryField
+from .users.models import Driver
 
 class Ad(models.Model):
 
@@ -59,7 +60,7 @@ class Driverlocation(models.Model):
                       ]
 
 
-    driver = models.OneToOneFiled(Driver, on_delete=models.CASCADE, related_name="driverlocation")
+    driver = models.OneToOneField(Driver, on_delete=models.CASCADE, related_name="driverlocation")
 
     lontitude = models.DecimalField(default=0, max_digits=10, decimal_places=2)
     lattitude = models.DecimalField(default=0, max_digits=10, decimal_places=2)
