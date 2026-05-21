@@ -17,12 +17,15 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     #third party
-    'cities',
+    'cities_light',
+    'django_countries',
+
 
     #local
     'apps.users',
     'apps.loads',
     'apps.settings',
+    'apps.dictionary',
 ]
 
 MIDDLEWARE = [

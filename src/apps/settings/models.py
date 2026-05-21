@@ -1,5 +1,5 @@
 from django.db import models
-from cities.models import Country, Region, City
+from cities_light.models import Country, Region, City
 
 class Places(models.Model):
     country = models.ForeignKey(Country, on_delete=models.PROTECT)
