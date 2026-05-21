@@ -3,9 +3,9 @@ from django_countries.fields import CountrField
 
 class Ad(models.Model):
 
-    STATUS_CHOICES = [("ad", "Ad"
-                      "inporcess", "Inporcess"
-                      "delivered", "Delivered")
+    STATUS_CHOICES = [("ad", "Ad"),
+                      ("inporcess", "Inporcess"),
+                      ("delivered", "Delivered")
                       ]
 
     is_from = models.CountrField()
@@ -52,5 +52,17 @@ class Outprocess(models.Model):
     def __str__(self):
         return f"{self.ad}-{self.load}"
 
+class Driverlocation(models.Model):
+    STATUS_CHOICES = [("all", "All"),
+                      ("empty", "Empty"),
+                      ("on_road", "On_road")
+                      ]
 
 
+    driver = models.OneToOneFiled(Driver, on_delete=models.CASCADE, related_name="driverlocation")
+
+    lontitude = models.DecimalField(default=0, max_digits=10, decimal_places=2)
+    lattitude = models.DecimalField(default=0, max_digits=10, decimal_places=2)
+
+    note = models.TextField(max_length=1000, null=True, Blank=True, default="")
+    created_at = models.DateTimeField(auto_now_add=True)
