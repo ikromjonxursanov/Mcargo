@@ -31,7 +31,7 @@ class Driverlocation(models.Model):
 
 
     driver = models.OneToOneField(Driver, on_delete=models.CASCADE, related_name="driverlocation")
-    
+    status = models.CharField(max_length=100, choices=STATUS_CHOICES, default="empty")
 
     longitude = models.DecimalField(default=0, max_digits=10, decimal_places=6)
     latitude = models.DecimalField(default=0, max_digits=10, decimal_places=6)
