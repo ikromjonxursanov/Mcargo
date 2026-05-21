@@ -10,6 +10,8 @@ class User(AbstractUser):
         ('driver', 'Driver'),
         ('manager', 'Manager'),
         ('consignor', 'Consignor'),
+        ("dispecher", "dispecher"),
+        ("yuk tashuvchi firma", "Yuk tashuvchi firma"),
     ]
     role = models.CharField(max_length=20, choices=ROLE_CHOICES, default='driver')
     phone_number = models.CharField(max_length=13, null=False, blank=False, validators=[phone_validator])
@@ -55,3 +57,5 @@ class Payment(models.Model):
     note = models.CharField(max_length=200)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+class Carrier(models.Model):
