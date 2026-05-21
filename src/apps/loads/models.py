@@ -14,7 +14,7 @@ class Ad(models.Model):
     to_country = CountryField()
 
     status = models.CharField(max_length=100, choices=STATUS_CHOICES, default="ad")
-    load = models.CharField(max_length=100, null=True, blank=True, default=0)
+    load = models.CharField(max_length=100, null=True, blank=True, default="")
     price = models.DecimalField(default=0, max_digits=10, decimal_places=2)
     created = models.DateTimeField(auto_now_add=True)
 
@@ -24,16 +24,17 @@ class Ad(models.Model):
         return f"{self.from_country}-{self.to_country}"
 
 class Driverlocation(models.Model):
-    STATUS_CHOICES = [("all", "All"),
+    STATUS_CHOICES = [
                       ("empty", "Empty"),
                       ("on_road", "On_road")
                       ]
 
 
     driver = models.OneToOneField(Driver, on_delete=models.CASCADE, related_name="driverlocation")
+    
 
-    longitude = models.DecimalField(default=0, max_digits=10, decimal_places=2)
-    latitude = models.DecimalField(default=0, max_digits=10, decimal_places=2)
+    longitude = models.DecimalField(default=0, max_digits=10, decimal_places=6)
+    latitude = models.DecimalField(default=0, max_digits=10, decimal_places=6)
 
-    note = models.TextField(max_length=1000, null=True, Blank=True, default="")
+    note = models.TextField(max_length=1000, null=True, blank=True, default="")
     created_at = models.DateTimeField(auto_now_add=True)
